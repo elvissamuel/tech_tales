@@ -1,0 +1,43 @@
+
+
+[
+    {
+        "title": "Technological Advancement",
+        "category": "Technology",
+        "author": "Elvis",
+        "date": "03-10-2023",
+        "image": "/assets/imgs/blogimg1.jpg",
+        "content": "This is the body of the blog about technological advancement and it is just a test run of what I am currently doing right now. SO I just keep type so I can have more content because this is supposed to be a body of the blog. So if you are reading this and you have a better Idea as to how I can get more content or you even want to add it yourself, feel free, thank you"
+    }, 
+    {
+        "title": "The Supremacy of the English Premier League",
+        "category": "Sport",
+        "author": "Paul",
+        "date": "06-10-2023",
+        "image": "/assets/imgs/blogimg2.jpg",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum lorem non augue dapibus cursus. Integer ut justo in arcu dignissim bibendum. Vivamus placerat purus eget nunc interdum, quis malesuada urna aliquam. Duis at dui eget est vulputate tincidunt."
+    }, 
+    {
+        "title": "The Speedy Rise of Artificial Intelligence",
+        "category": "Technology",
+        "author": "Sandra",
+        "date": "08-10-2023",
+        "image": "/assets/imgs/blogimg3.jpg",
+        "content": "Proin efficitur orci eu velit malesuada, eu venenatis augue pellentesque. Phasellus lacinia odio id libero hendrerit scelerisque. Fusce luctus quam non risus vestibulum, ac varius elit fermentum. Curabitur a justo vitae dolor laoreet volutpat. Donec egestas urna ut dictum vehicula. Nullam vel justo a elit posuere bibendum."
+    }, {
+        "title": "The Speedy Rise of Artificial Intelligence",
+        "category": "Technology",
+        "author": "Sandra",
+        "date": "08-10-2023",
+        "image": "/assets/imgs/blogimg4.jpg",
+        "content": "Proin efficitur orci eu velit malesuada, eu venenatis augue pellentesque. Phasellus lacinia odio id libero hendrerit scelerisque. Fusce luctus quam non risus vestibulum, ac varius elit fermentum. Curabitur a justo vitae dolor laoreet volutpat. Donec egestas urna ut dictum vehicula. Nullam vel justo a elit posuere bibendum."
+    },
+    {
+        "title": "The Speedy Rise of Artificial Intelligence",
+        "category": "Technology",
+        "author": "Sandra",
+        "date": "08-10-2023",
+        "image": "/assets/imgs/blogimg5.jpg",
+        "content": "Proin efficitur orci eu velit malesuada, eu venenatis augue pellentesque. Phasellus lacinia odio id libero hendrerit scelerisque. Fusce luctus quam non risus vestibulum, ac varius elit fermentum. Curabitur a justo vitae dolor laoreet volutpat. Donec egestas urna ut dictum vehicula. Nullam vel justo a elit posuere bibendum."
+    }
+]

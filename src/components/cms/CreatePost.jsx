@@ -91,6 +91,8 @@ const CreatePost = () => {
                         <option value="Sports">Sports</option>
                         <option value="Food">Food</option>
                         <option value="Fashion">Fashion</option>
+                        <option value="Culture">Culture</option>
+                        <option value="Wildlife">Wildlife</option>
                     </select>
                 </label>
             </div>

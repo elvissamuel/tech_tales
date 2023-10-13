@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import data from '../../data.json'
-import { useSelector } from 'react-redux/es/hooks/useSelector'
 import { Link } from 'react-router-dom'
 import { myStore } from '../../firebase-config';
 import { collection, addDoc, deleteDoc, doc, getDocs, updateDoc } from 'firebase/firestore'
@@ -23,7 +21,6 @@ const Dashboard = () => {
       const filteredData = data.docs.map((doc)=>({...doc.data(), id: doc.id}))
       dispatch(add(filteredData))
       setPostStore(filteredData)
-      console.log('db: ', postStore)
       } catch(err){
         console.error(err)
       }
@@ -37,6 +34,24 @@ const Dashboard = () => {
       })
     }
 
+    const confirmDelete = (e)=>{
+      Swal.fire({
+        title: 'Do you want to delete this article?',
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        denyButtonText: `No`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          handleDeletePost(e)
+          // Swal.fire('Deleted!', '', 'success')
+        } else if (result.isDenied) {
+          Swal.fire('Changes are not saved', '', 'info')
+        }
+      })
+    }
+
     const handleDeletePost = async (id)=>{
       const file = doc(myStore, 'blogpost', id)
       try{
@@ -45,16 +60,9 @@ const Dashboard = () => {
       } catch(err){
         if(err){
           errorAlert()
-          console.error(err)
         }
       }
       
-    }
-
-    const handleEditPost = async (id)=>{
-      const file = doc(myStore, )
-      await updateDoc(file)
-      getStore();
     }
   
     useEffect(()=>{
@@ -68,10 +76,10 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div>
+      <div className='my-10'>
         <div className='flex justify-end'>
             <Link to={'/newpost'}>
-            <button className='py-1.5 px-3 mt-6 mb-4 border bg-green-700 text-white text-sm'>Create Post</button>
+            <button className='py-1.5 px-3 mt-3 mb-4 border bg-green-700 text-white text-sm'>Create Post</button>
             </Link>
         </div>
 
@@ -83,7 +91,7 @@ const Dashboard = () => {
                         
                         <div className='text-sm md:text-sm shrink-0'>
                             <button className='border py-1 px-3' onClick={()=>setDisplayEdit(index)}>Edit</button>
-                            <button className='border py-1 px-3' onClick={()=>handleDeletePost(post.id)}>Delete</button>
+                            <button className='border py-1 px-3' onClick={()=>confirmDelete(post.id)}>Delete</button>
                             { displayEdit === index && <button className='border bg-red-600 text-white py-1 px-2 md:px-3' onClick={()=>setDisplayEdit('cancel')}>Cancel</button>}
                         </div>
                     </div>

@@ -8,6 +8,7 @@ import Login from './components/cms/Login';
 import Register from './components/cms/Register';
 import data from './data.json'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Footer from './components/Footer';
 
 // import img1 from "/assets/imgs/blogimg1.jpg"
 function App() {
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <Router>
-      <div className="sm:w-[90%] lg:w-4/5 xl:w-2/3 mx-auto">
+      <div className="font-lato w-[99%] lg:w-4/5 xl:w-[85%] mx-auto">
         <Nav />
         <Routes>
           <Route path='/' element={<DisplayBlog />} />
@@ -28,6 +29,7 @@ function App() {
           {/* <DisplayBlog /> */}
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }

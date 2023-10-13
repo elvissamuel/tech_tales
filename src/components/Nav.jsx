@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { signOut } from 'firebase/auth';
 import {auth} from '../firebase-config'
 import { currentUser } from '../features/user';
+import Swal from 'sweetalert2';
 
 
 const Nav = () => {
@@ -17,24 +18,27 @@ const Nav = () => {
         try{
             await signOut(auth)
             dispatch(currentUser(''))
+            Swal.fire('You logged out successfully!')
             navigate('/')
 
         } catch (err){
             if (err){
-                // setLoginError(true)
-                console.log(err)
+                Swal.fire('Error in logging out!')
             }
         }
     }
   return (
     <div className=''>
       <div>
-        <ul className="flex justify-between py-4 px-6 border mb-2 bg-blue-950 text-white">
-            <div className="flex gap-10">
+        <ul className="flex items-center justify-between py-4 px-6 border mb-2 bg-blue-950 text-white">
+            <div className="flex items-center gap-10">
                 <Link to={'/'}>
+                    <p className='font-barlow font-bold text-2xl'>Tech<span className='text-teal-500'>Tales </span></p>
+                </Link>
+                <Link className='hidden md:block ' to={'/'}>
                     <li>Home</li>
                 </Link>
-                <li>Category</li>
+                <li  className='hidden md:block'>Category</li>
             </div>
 
             {user ? <div> <p>{user}</p>
